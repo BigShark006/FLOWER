@@ -171,15 +171,19 @@
 
   #dev-license{
     position:fixed;
-    bottom:5px;
     left:50%;
     transform:translateX(-50%);
-    font:600 8px Arial,sans-serif;
-    color:#ffffff33;
-    letter-spacing:1px;
+
+    bottom:calc(env(safe-area-inset-bottom) + 10px);
+
+    font-size:8px;
+    color:rgba(255,255,255,.35);
+
+    white-space:nowrap;
     pointer-events:none;
     user-select:none;
-    z-index:999999;
+
+    z-index:999999999;
 }
 
   /* Form */
