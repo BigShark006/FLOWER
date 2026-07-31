@@ -288,76 +288,46 @@
   .link-card{ display:flex; align-items:center; gap:12px; }
   .link-card .arrow{ color:var(--ink-soft); font-size:14px; }
 
-  /* ---------- WELCOME / ĐĂNG NHẬP ---------- */
-  .welcome-view{
-    min-height:100%;
+ .auth-tabs{
     display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:20px 8px;
-  }
-  .welcome-logo{
-    width:110px; height:110px; border-radius:50%;
-    background:linear-gradient(145deg,#F5FAF3,#DCECDC);
-    border:3px solid var(--leaf-green);
-    display:flex; align-items:center; justify-content:center;
-    font-size:56px; margin-bottom:18px;
-    box-shadow:0 10px 25px rgba(39,75,52,.15);
-  }
-  .welcome-title{
-    font-size:31px; font-weight:800; color:var(--deep-green);
-    margin:0;
-  }
-  .welcome-slogan{
-    font-size:17px; font-weight:600; color:var(--mid-green);
-    line-height:1.65; margin:18px 0 42px;
-  }
-  .welcome-actions{
-    width:100%; max-width:300px;
-    display:flex; flex-direction:column; gap:13px;
-  }
-  .welcome-btn{
-    width:100%; padding:15px; border-radius:16px;
-    font-family:inherit; font-size:16px; font-weight:700;
-    cursor:pointer; transition:transform .15s ease;
-  }
-  .welcome-btn:active{ transform:scale(.97); }
-  .welcome-register{
-    background:var(--deep-green); color:white; border:none;
-    box-shadow:0 8px 18px rgba(39,75,52,.22);
-  }
-  .welcome-login{
-    background:white; color:var(--deep-green);
-    border:2px solid var(--deep-green);
-  }
+    background:#f3f4f6;
+    border-radius:12px;
+    padding:4px;
+    margin-bottom:20px;
+}
+
+.auth-tabs button{
+    flex:1;
+    border:none;
+    background:transparent;
+    padding:12px;
+    border-radius:10px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.auth-tabs button.active{
+    background:#16a34a;
+    color:#fff;
+}
   
 </style>
 </head>
 <body>
 
-  <!-- WELCOME / ĐĂNG NHẬP -->
-    <div class="view active" id="view-welcome">
-      <div class="welcome-view">
-        <div class="welcome-logo">🌼</div>
-        <h1 class="welcome-title">Hoa Tiết Kiệm</h1>
-        <p class="welcome-slogan">
-          Kết nối – Tiết kiệm –<br>
-          Lan tỏa giá trị
-        </p>
+ <div class="auth-tabs">
+    <button class="active" onclick="switchAuth('login')">Đăng nhập</button>
+    <button onclick="switchAuth('register')">Đăng ký</button>
+</div>
 
-        <div class="welcome-actions">
-          <button class="welcome-btn welcome-register" onclick="enterApp()">
-            👤＋ Đăng ký
-          </button>
-          <button class="welcome-btn welcome-login" onclick="enterApp()">
-            ⇥ Đăng nhập
-          </button>
-        </div>
-      </div>
-    </div>
+<div id="loginForm">
+    <!-- Form đăng nhập -->
+</div>
 
+<div id="registerForm" style="display:none">
+    <!-- Form đăng ký -->
+</div>
 <div class="phone">
   <div class="modal-overlay" id="modal-overlay" onclick="closeModalOnOverlay(event)">
     <div class="modal-sheet" id="modal-sheet" onclick="event.stopPropagation()">
@@ -712,6 +682,22 @@ let notifications = [
 ];
 let nextNotifId = 5;
 let followedTopics = new Set(); // các topic đã được đánh dấu sao
+
+  function switchAuth(type){
+
+    document.querySelectorAll(".auth-tabs button")
+        .forEach(btn=>btn.classList.remove("active"));
+
+    if(type==="login"){
+        document.getElementById("loginForm").style.display="block";
+        document.getElementById("registerForm").style.display="none";
+        document.querySelectorAll(".auth-tabs button")[0].classList.add("active");
+    }else{
+        document.getElementById("loginForm").style.display="none";
+        document.getElementById("registerForm").style.display="block";
+        document.querySelectorAll(".auth-tabs button")[1].classList.add("active");
+    }
+}
 
 /* ================= MODAL CHI TIẾT ================= */
 
