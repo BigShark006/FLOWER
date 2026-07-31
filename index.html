@@ -40,7 +40,7 @@
 
   /* ---------- Phone shell ---------- */
   .phone{
-        width:390px;
+   width:390px;
     height:844px;
     max-width:none;
     max-height:none;
@@ -225,117 +225,67 @@
   }
   .new-flower-hint.show{ display:block; }
 
-  .notif-item{ display:flex; gap:10px; padding:14px 0; border-bottom:1px solid var(--line); position:relative; }
+  .notif-item{ display:flex; gap:12px; padding:14px 0; border-bottom:1px solid var(--line); }
   .notif-item:last-child{ border-bottom:none; }
   .notif-dot{
     width:9px; height:9px; border-radius:50%; background:var(--blush); flex:none; margin-top:6px;
   }
   .notif-item.read .notif-dot{ background:var(--line); }
-  .notif-content{ flex:1; min-width:0; cursor:pointer; }
   .notif-text{ font-size:12.5px; color:var(--ink); line-height:1.5; }
-  .notif-item.read .notif-text{ color:var(--ink-soft); }
   .notif-text b{ color:var(--deep-green); }
   .notif-time{ font-size:10.5px; color:var(--ink-soft); margin-top:3px; }
-  .notif-related{
-    display:inline-block; font-size:9.5px; font-weight:700; color:var(--mid-green); background:var(--sage);
-    border-radius:999px; padding:2px 8px; margin-top:6px;
-  }
-  .notif-actions{ display:flex; flex-direction:column; gap:6px; flex:none; }
-  .icon-btn{
-    width:28px; height:28px; border-radius:50%; border:1px solid var(--line); background:var(--white);
-    display:flex; align-items:center; justify-content:center; font-size:13px; cursor:pointer; color:var(--ink-soft);
-  }
-  .icon-btn.starred{ background:#FDF3D9; border-color:#F0D583; color:#C79A1E; }
-  .icon-btn.delete-btn:active{ background:#FBE9E7; }
-  .notif-empty{ text-align:center; padding:36px 10px; color:var(--ink-soft); }
 
-  /* Modal chi tiết (bài viết / nhu cầu) */
-  .modal-overlay{
-    position:absolute; inset:0; background:rgba(20,30,20,0.45); z-index:200;
-    display:flex; align-items:flex-end; justify-content:center;
-    opacity:0; pointer-events:none; transition:opacity .25s ease;
-  }
-  .modal-overlay.show{ opacity:1; pointer-events:auto; }
-  .modal-sheet{
-    width:100%; max-height:80%; background:var(--cream); border-radius:26px 26px 0 0;
-    padding:10px 22px 26px 22px; overflow-y:auto; transform:translateY(100%); transition:transform .3s ease;
-  }
-  .modal-overlay.show .modal-sheet{ transform:translateY(0); }
-  .modal-handle{ width:38px; height:4px; background:var(--line); border-radius:999px; margin:8px auto 14px auto; }
-  .modal-icon-lg{
-    width:52px; height:52px; border-radius:14px; background:var(--sage); color:var(--mid-green);
-    display:flex; align-items:center; justify-content:center; font-size:24px; margin-bottom:12px;
-  }
-  .modal-title{ font-size:17px; font-weight:800; color:var(--deep-green); margin-bottom:6px; }
-  .modal-meta{ font-size:12px; color:var(--ink-soft); margin-bottom:14px; line-height:1.6; }
-  .modal-desc{ font-size:13px; color:var(--ink); line-height:1.7; margin-bottom:16px; }
-  .modal-close-x{
-    position:absolute; top:14px; right:18px; width:30px; height:30px; border-radius:50%;
-    background:var(--white); border:1px solid var(--line); display:flex; align-items:center; justify-content:center;
-    cursor:pointer; font-size:14px; color:var(--ink-soft);
-  }
 
-  /* Đăng nhập / đăng xuất */
-  .auth-card{
-    background:var(--white); border:1px solid var(--line); border-radius:var(--radius-lg); padding:24px 20px; text-align:center;
-  }
-  .auth-icon{ font-size:40px; margin-bottom:10px; }
-  .auth-title{ font-size:16px; font-weight:800; color:var(--deep-green); margin-bottom:4px; }
-  .auth-sub{ font-size:12px; color:var(--ink-soft); margin-bottom:18px; line-height:1.5; }
-  .auth-field{ text-align:left; margin-bottom:12px; }
-  .link-row{ display:flex; justify-content:center; margin-top:14px; font-size:12px; color:var(--ink-soft); }
-  .link-row span{ color:var(--mid-green); font-weight:700; cursor:pointer; margin-left:4px; }
-  .link-card{ display:flex; align-items:center; gap:12px; }
-  .link-card .arrow{ color:var(--ink-soft); font-size:14px; }
-
- .auth-tabs{
+  /* ---------- WELCOME / ĐĂNG NHẬP ---------- */
+  .welcome-view{
+    min-height:100%;
     display:flex;
-    background:#f3f4f6;
-    border-radius:12px;
-    padding:4px;
-    margin-bottom:20px;
-}
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px 8px;
+  }
+  .welcome-logo{
+    width:110px; height:110px; border-radius:50%;
+    background:linear-gradient(145deg,#F5FAF3,#DCECDC);
+    border:3px solid var(--leaf-green);
+    display:flex; align-items:center; justify-content:center;
+    font-size:56px; margin-bottom:18px;
+    box-shadow:0 10px 25px rgba(39,75,52,.15);
+  }
+  .welcome-title{
+    font-size:31px; font-weight:800; color:var(--deep-green);
+    margin:0;
+  }
+  .welcome-slogan{
+    font-size:17px; font-weight:600; color:var(--mid-green);
+    line-height:1.65; margin:18px 0 42px;
+  }
+  .welcome-actions{
+    width:100%; max-width:300px;
+    display:flex; flex-direction:column; gap:13px;
+  }
+  .welcome-btn{
+    width:100%; padding:15px; border-radius:16px;
+    font-family:inherit; font-size:16px; font-weight:700;
+    cursor:pointer; transition:transform .15s ease;
+  }
+  .welcome-btn:active{ transform:scale(.97); }
+  .welcome-register{
+    background:var(--deep-green); color:white; border:none;
+    box-shadow:0 8px 18px rgba(39,75,52,.22);
+  }
+  .welcome-login{
+    background:white; color:var(--deep-green);
+    border:2px solid var(--deep-green);
+  }
 
-.auth-tabs button{
-    flex:1;
-    border:none;
-    background:transparent;
-    padding:12px;
-    border-radius:10px;
-    font-weight:600;
-    cursor:pointer;
-    transition:.25s;
-}
-
-.auth-tabs button.active{
-    background:#16a34a;
-    color:#fff;
-}
-  
 </style>
 </head>
 <body>
 
- <div class="auth-tabs">
-    <button class="active" onclick="switchAuth('login')">Đăng nhập</button>
-    <button onclick="switchAuth('register')">Đăng ký</button>
-</div>
-
-<div id="loginForm">
-    <!-- Form đăng nhập -->
-</div>
-
-<div id="registerForm" style="display:none">
-    <!-- Form đăng ký -->
-</div>
 <div class="phone">
-  <div class="modal-overlay" id="modal-overlay" onclick="closeModalOnOverlay(event)">
-    <div class="modal-sheet" id="modal-sheet" onclick="event.stopPropagation()">
-      <div class="modal-handle"></div>
-      <div class="modal-close-x" onclick="closeModal()">✕</div>
-      <div id="modal-body"></div>
-    </div>
-  </div>
   <div class="notch"></div>
   <div class="statusbar">
     <span id="clock">9:41</span>
@@ -355,8 +305,30 @@
 
   <div class="screen">
 
+
+    <!-- WELCOME / ĐĂNG NHẬP -->
+    <div class="view active" id="view-welcome">
+      <div class="welcome-view">
+        <div class="welcome-logo">🌼</div>
+        <h1 class="welcome-title">Hoa Tiết Kiệm</h1>
+        <p class="welcome-slogan">
+          Kết nối – Tiết kiệm –<br>
+          Lan tỏa giá trị
+        </p>
+
+        <div class="welcome-actions">
+          <button class="welcome-btn welcome-register" onclick="enterApp()">
+            👤＋ Đăng ký
+          </button>
+          <button class="welcome-btn welcome-login" onclick="enterApp()">
+            ⇥ Đăng nhập
+          </button>
+        </div>
+      </div>
+    </div>
+
     <!-- HOME -->
-    <div class="view active" id="view-home">
+    <div class="view" id="view-home">
       <div class="hero-card">
         <h2>Kết nối nguồn hoa – Tạo giá trị bền vững</h2>
         <p>Đăng hoa sau sử dụng, để AI ghép nối với những nơi cần đến chúng.</p>
@@ -388,35 +360,14 @@
       </div>
 
       <div class="section-title">Vì sao chọn Hoa Tiết Kiệm?</div>
-      <div class="list-card" onclick="openWhyModal('moitruong')">
+      <div class="list-card">
         <div class="thumb">🌱</div>
         <div class="info">
           <div class="title">Thân thiện môi trường</div>
           <div class="meta">Giảm rác thải hữu cơ, góp phần bảo vệ môi trường sống quanh bạn.</div>
         </div>
       </div>
-      <div class="list-card" onclick="openWhyModal('thoigian')">
-        <div class="thumb">⏱️</div>
-        <div class="info">
-          <div class="title">Tiết kiệm thời gian</div>
-          <div class="meta">AI tự động ghép nối, tìm kiếm nhanh chóng, hiệu quả.</div>
-        </div>
-      </div>
-      <div class="list-card" onclick="openWhyModal('vitri')">
-        <div class="thumb">📍</div>
-        <div class="info">
-          <div class="title">Kết nối theo vị trí</div>
-          <div class="meta">Ưu tiên kết nối gần, giảm chi phí vận chuyển.</div>
-        </div>
-      </div>
-      <div class="list-card" onclick="openWhyModal('giatri')">
-        <div class="thumb">📈</div>
-        <div class="info">
-          <div class="title">Tối ưu giá trị hoa</div>
-          <div class="meta">Hoa sau sử dụng được tái tạo giá trị, phục vụ nhiều mục đích khác.</div>
-        </div>
-      </div>
-      <div class="list-card" onclick="openWhyModal('congdong')">
+      <div class="list-card">
         <div class="thumb">🤝</div>
         <div class="info">
           <div class="title">Cộng đồng bền vững</div>
@@ -431,7 +382,7 @@
       <h1 class="page-title">Ai đang cần hoa của bạn?</h1>
       <p class="sub">AI ghép nối tự động dựa trên loại hoa, số lượng và khoảng cách.</p>
 
-      <div class="list-card" onclick="openMatchModal('an-nhien')">
+      <div class="list-card">
         <div class="thumb">🕯️</div>
         <div class="info">
           <div class="title">Cửa hàng nến thơm An Nhiên</div>
@@ -439,7 +390,7 @@
           <span class="tag">Đang cần gấp</span>
         </div>
       </div>
-      <div class="list-card" onclick="openMatchModal('leaf-style')">
+      <div class="list-card">
         <div class="thumb">📜</div>
         <div class="info">
           <div class="title">Xưởng giấy thủ công Leaf &amp; Style</div>
@@ -447,7 +398,7 @@
           <span class="tag">Mới đăng</span>
         </div>
       </div>
-      <div class="list-card" onclick="openMatchModal('moc-hoa')">
+      <div class="list-card">
         <div class="thumb">🧴</div>
         <div class="info">
           <div class="title">Cơ sở mỹ phẩm Mộc Hoa</div>
@@ -455,7 +406,7 @@
           <span class="tag">Còn 2 ngày</span>
         </div>
       </div>
-      <div class="list-card" onclick="openMatchModal('thao-moc')">
+      <div class="list-card">
         <div class="thumb">👜</div>
         <div class="info">
           <div class="title">Xưởng handmade Thảo Mộc</div>
@@ -471,23 +422,20 @@
       <h1 class="page-title">Thông tin hoa</h1>
       <p class="sub">Tải ảnh lên để AI tự động nhận diện loại hoa và gợi ý nơi cần đến.</p>
 
-      <div class="upload-box" id="upload-box" onclick="triggerUpload()">
-        <img id="preview-img" style="display:none; width:100%; max-height:180px; object-fit:cover; border-radius:14px; margin-bottom:8px;">
-        <div class="ic" id="upload-ic">📷</div>
+      <div class="upload-box" id="upload-box" onclick="runAI()">
+        <div class="ic">📷</div>
         <div class="txt" id="upload-txt">Chạm để tải ảnh hoa lên</div>
         <div class="sub-txt" id="upload-sub">AI sẽ nhận diện loại hoa giúp bạn</div>
       </div>
-      <input type="file" id="file-input" accept="image/*" capture="environment" style="display:none" onchange="handleFile(event)">
 
       <div class="ai-box" id="ai-box">
         <div class="ai-row">
           <div class="ai-icon">AI</div>
-          <div class="ai-title" id="ai-title">Đã nhận diện xong</div>
+          <div class="ai-title">Đã nhận diện xong</div>
         </div>
-        <div id="ai-error" style="display:none; font-size:12px; color:var(--blush); font-weight:600; margin-bottom:8px;"></div>
-        <div class="ai-check"><span class="dot">✓</span> Nhận diện loại hoa: <b id="ai-loaihoa">—</b></div>
-        <div class="ai-check"><span class="dot">✓</span> Tình trạng: <b id="ai-tinhtrang">—</b></div>
-        <div class="ai-check" id="ai-mota-row"><span class="dot">✓</span> <span id="ai-mota">—</span></div>
+        <div class="ai-check"><span class="dot">✓</span> Nhận diện loại hoa: Hoa hồng</div>
+        <div class="ai-check"><span class="dot">✓</span> Đọc thông tin tình trạng hoa</div>
+        <div class="ai-check"><span class="dot">✓</span> Gợi ý 4 nhu cầu phù hợp gần bạn</div>
         <div class="ai-check"><span class="dot">✓</span> Đã điền sẵn thông tin bên dưới</div>
       </div>
 
@@ -528,80 +476,63 @@
     <div class="view" id="view-notif">
       <div class="eyebrow">Thông báo</div>
       <h1 class="page-title">Cập nhật của bạn</h1>
-      <p class="sub">Chạm vào thông báo để đánh dấu đã đọc · Nhấn ★ để đánh dấu sao (nhận diện thông báo liên quan sau này) · Nhấn ✕ để xóa.</p>
+      <p class="sub">Theo dõi tiến trình kết nối hoa sau sử dụng.</p>
 
-      <div id="notif-list"></div>
-
-      <button class="btn btn-outline btn-block" style="margin-top:10px; border-style:dashed;" onclick="addSimulatedNotification()">＋ Mô phỏng thông báo mới (thử nghiệm)</button>
+      <div class="notif-item">
+        <div class="notif-dot"></div>
+        <div>
+          <div class="notif-text"><b>An Nhiên Candles</b> quan tâm đến hoa hồng bạn vừa đăng.</div>
+          <div class="notif-time">5 phút trước</div>
+        </div>
+      </div>
+      <div class="notif-item">
+        <div class="notif-dot"></div> 
+        <div>
+          <div class="notif-text">AI đã tìm thấy <b>3 nhu cầu phù hợp</b> mới gần bạn.</div>
+          <div class="notif-time">2 giờ trước</div>
+        </div>
+      </div>
+      <div class="notif-item read">
+        <div class="notif-dot"></div>
+        <div>
+          <div class="notif-text">Bạn đã kết nối thành công với <b>Xưởng giấy Leaf &amp; Style</b>.</div>
+          <div class="notif-time">Hôm qua</div>
+        </div>
+      </div>
+      <div class="notif-item read">
+        <div class="notif-dot"></div>
+        <div>
+          <div class="notif-text">Cảm ơn bạn đã góp phần giảm <b>12kg</b> rác thải hoa tháng này 🌿</div>
+          <div class="notif-time">3 ngày trước</div>
+        </div>
+      </div>
     </div>
 
     <!-- PROFILE / CÁ NHÂN -->
     <div class="view" id="view-profile">
       <div class="eyebrow">Cá nhân</div>
-      <h1 class="page-title" id="profile-heading">Hồ sơ của bạn</h1>
+      <h1 class="page-title">Hồ sơ của bạn</h1>
 
-      <!-- Đã đăng nhập -->
-      <div id="profile-logged-in">
-        <div class="profile-head">
-          <div class="avatar">PN</div>
-          <div>
-            <div class="profile-name">Trúc Nhi</div>
-            <div class="profile-sub">Q9, TP Ho Chi Minh · Bên cung</div>
-          </div>
-        </div>
-
-        <div class="stat-row">
-          <div class="stat-card"><div class="stat-num">18</div><div class="stat-label">Bó hoa đã đăng</div></div>
-          <div class="stat-card"><div class="stat-num">6</div><div class="stat-label">Kết nối</div></div>
-          <div class="stat-card"><div class="stat-num">9kg</div><div class="stat-label">Rác thải giảm</div></div>
-        </div>
-
-        <div class="section-title">Hoạt động của bạn</div>
-        <div class="list-card link-card" onclick="goTo('post')">
-          <div class="thumb">🌿</div>
-          <div class="info"><div class="title">Đăng hoa sau sử dụng</div><div class="meta">Đăng bó hoa mới để AI ghép nối</div></div>
-          <div class="arrow">›</div>
-        </div>
-        <div class="list-card link-card" onclick="goTo('match')">
-          <div class="thumb">🔍</div>
-          <div class="info"><div class="title">Nhu cầu phù hợp</div><div class="meta">Xem các nơi đang cần hoa của bạn</div></div>
-          <div class="arrow">›</div>
-        </div>
-        <div class="list-card link-card" onclick="goTo('notif')">
-          <div class="thumb">🔔</div>
-          <div class="info"><div class="title">Thông báo</div><div class="meta">Xem cập nhật kết nối mới nhất</div></div>
-          <div class="arrow">›</div>
-        </div>
-
-        <div class="section-title">Tài khoản</div>
-        <div class="list-card"><div class="thumb">🏪</div><div class="info"><div class="title">Loại hình</div><div class="meta">Quán cà phê</div></div></div>
-        <div class="list-card"><div class="thumb">📍</div><div class="info"><div class="title">Địa điểm mặc định</div><div class="meta">Quận 1, TP.HCM</div></div></div>
-        <div class="list-card"><div class="thumb">🔔</div><div class="info"><div class="title">Thông báo</div><div class="meta">Đang bật cho nhu cầu phù hợp</div></div></div>
-
-        <button class="btn btn-outline btn-block" style="margin-top:10px;" onclick="logout()">Đăng xuất</button>
-      </div>
-
-      <!-- Chưa đăng nhập -->
-      <div id="profile-logged-out" style="display:none;">
-        <div class="auth-card">
-          <div class="auth-icon">✿</div>
-          <div class="auth-title">Đăng nhập Hoa Tiết Kiệm</div>
-          <div class="auth-sub">Đăng nhập để đăng hoa, theo dõi kết nối và nhận thông báo.</div>
-
-          <div class="auth-field">
-            <label class="field-label" style="margin-top:0;">Email</label>
-            <input class="field" id="login-email" placeholder="ban@email.com" type="email">
-          </div>
-          <div class="auth-field">
-            <label class="field-label">Mật khẩu</label>
-            <input class="field" id="login-password" placeholder="••••••••" type="password">
-          </div>
-
-          <button class="btn btn-solid" onclick="login()">Đăng nhập</button>
-          <div class="link-row">Chưa có tài khoản? <span onclick="showToast('Tính năng đăng ký đang được phát triển')">Đăng ký</span></div>
-          <div class="link-row">Quên mật khẩu? <span onclick="showToast('Tính năng khôi phục mật khẩu đang được phát triển')">Khôi phục</span></div>
+      <div class="profile-head">
+        <div class="avatar">TN</div>
+        <div>
+          <div class="profile-name">Trúc Nhi</div>
+          <div class="profile-sub">Quận 1, TP.HCM · Bên cung</div>
         </div>
       </div>
+
+      <div class="stat-row">
+        <div class="stat-card"><div class="stat-num">18</div><div class="stat-label">Bó hoa đã đăng</div></div>
+        <div class="stat-card"><div class="stat-num">6</div><div class="stat-label">Kết nối</div></div>
+        <div class="stat-card"><div class="stat-num">9kg</div><div class="stat-label">Rác thải giảm</div></div>
+      </div>
+
+      <div class="section-title">Tài khoản</div>
+      <div class="list-card"><div class="thumb">🏪</div><div class="info"><div class="title">Loại hình</div><div class="meta">Quán cà phê</div></div></div>
+      <div class="list-card"><div class="thumb">📍</div><div class="info"><div class="title">Địa điểm mặc định</div><div class="meta">Quận 1, TP.HCM</div></div></div>
+      <div class="list-card"><div class="thumb">🔔</div><div class="info"><div class="title">Thông báo</div><div class="meta">Đang bật cho nhu cầu phù hợp</div></div></div>
+
+      <button class="btn btn-outline btn-block" style="margin-top:10px;" onclick="logoutApp()">Đăng xuất</button>
     </div>
 
   </div>
@@ -618,253 +549,26 @@
 </div>
 
 <script>
-/* ================= DỮ LIỆU ================= */
 
-// Nội dung đầy đủ của 5 lý do chọn Hoa Tiết Kiệm (Trang chủ)
-const whyData = {
-  moitruong: {
-    icon:'🌱', title:'Thân thiện môi trường',
-    meta:'Giảm rác thải hữu cơ',
-    full:'Mỗi năm, hàng tấn hoa sau sự kiện, tiệc cưới hay tại các cửa hàng bị bỏ đi dù vẫn còn giá trị sử dụng. Hoa Tiết Kiệm giúp kết nối nguồn hoa này đến những nơi có thể tái sử dụng — như xưởng làm nến thơm, cơ sở mỹ phẩm thiên nhiên hay xưởng giấy thủ công — thay vì để chúng trở thành rác thải hữu cơ. Điều này góp phần giảm lượng rác đưa ra bãi chôn lấp và giảm phát thải khí nhà kính từ quá trình phân hủy.'
-  },
-  thoigian: {
-    icon:'⏱️', title:'Tiết kiệm thời gian',
-    meta:'AI ghép nối tự động',
-    full:'Thay vì phải tự tìm nơi nhận hoa hay đăng tin trên nhiều kênh khác nhau, AI của Hoa Tiết Kiệm sẽ tự động nhận diện loại hoa, đọc tình trạng và ghép nối với các nhu cầu phù hợp gần bạn nhất chỉ trong vài giây. Toàn bộ quy trình từ đăng hoa đến nhận thông báo kết nối đều được tự động hóa, giúp bạn tiết kiệm đáng kể thời gian và công sức.'
-  },
-  vitri: {
-    icon:'📍', title:'Kết nối theo vị trí',
-    meta:'Ưu tiên khoảng cách gần',
-    full:'Hệ thống luôn ưu tiên hiển thị những nhu cầu gần vị trí của bạn nhất, giúp giảm chi phí và thời gian vận chuyển hoa. Khoảng cách được tính toán theo thời gian thực, và bạn có thể xem rõ số km tới từng điểm nhận trước khi quyết định kết nối.'
-  },
-  giatri: {
-    icon:'📈', title:'Tối ưu giá trị hoa',
-    meta:'Tái tạo giá trị sau sử dụng',
-    full:'Một bó hoa tưởng như đã hết giá trị sử dụng vẫn có thể trở thành nguyên liệu cho nến thơm, giấy thủ công, mỹ phẩm thiên nhiên hay các sản phẩm handmade khác. Hoa Tiết Kiệm giúp hoa "sống thêm một vòng đời mới", tối ưu hoá giá trị kinh tế thay vì lãng phí.'
-  },
-  congdong: {
-    icon:'🤝', title:'Cộng đồng bền vững',
-    meta:'Lan tỏa tiêu dùng xanh',
-    full:'Càng nhiều người tham gia, mạng lưới kết nối càng hiệu quả. Hoa Tiết Kiệm không chỉ là một ứng dụng, mà là một cộng đồng cùng chia sẻ thói quen tiêu dùng xanh, thúc đẩy kinh tế tuần hoàn và lan tỏa lối sống bền vững đến nhiều người hơn.'
-  }
-};
 
-// Chi tiết các nhu cầu phù hợp (màn Nhu cầu)
-const matchData = {
-  'an-nhien': {
-    icon:'🕯️', name:'Cửa hàng nến thơm An Nhiên', tag:'Đang cần gấp',
-    need:'Hoa hồng', qty:'8 – 15 bó', distance:'2,1 km', address:'12 Lê Lợi, Quận 1, TP.HCM', phone:'090 123 4567',
-    desc:'Chuyên sản xuất nến thơm handmade từ cánh hoa khô. Hiện đang cần gấp hoa hồng còn tươi đến hơi héo để kịp đợt sản xuất nến cho mùa lễ sắp tới.'
-  },
-  'leaf-style': {
-    icon:'📜', name:'Xưởng giấy thủ công Leaf & Style', tag:'Mới đăng',
-    need:'Hoa hồng', qty:'10 – 20 bó', distance:'2,8 km', address:'45 Nguyễn Huệ, Quận 1, TP.HCM', phone:'090 234 5678',
-    desc:'Xưởng sản xuất giấy thủ công từ cánh hoa ép khô, dùng làm thiệp và sổ tay. Nhận hoa ở mọi tình trạng, kể cả hoa đã héo.'
-  },
-  'moc-hoa': {
-    icon:'🧴', name:'Cơ sở mỹ phẩm Mộc Hoa', tag:'Còn 2 ngày',
-    need:'Hoa hồng', qty:'5 – 10 bó', distance:'3,3 km', address:'78 Pasteur, Quận 3, TP.HCM', phone:'090 345 6789',
-    desc:'Chiết xuất tinh dầu và nước hoa hồng từ cánh hoa tươi để làm mỹ phẩm thiên nhiên. Ưu tiên hoa còn tốt, mới thu hoạch trong 1–2 ngày.'
-  },
-  'thao-moc': {
-    icon:'👜', name:'Xưởng handmade Thảo Mộc', tag:'Mới đăng',
-    need:'Hoa các loại', qty:'3 – 8 bó', distance:'4,0 km', address:'23 Điện Biên Phủ, Bình Thạnh, TP.HCM', phone:'090 456 7890',
-    desc:'Xưởng làm túi vải và phụ kiện trang trí từ hoa khô ép. Nhận đa dạng loại hoa, không giới hạn tình trạng.'
-  }
-};
+function logoutApp(){
+  document.querySelector('.app-header').style.display = 'none';
+  document.querySelector('.bottom-nav').style.display = 'none';
 
-// Danh sách thông báo (trạng thái lưu tạm trong phiên làm việc)
-let notifications = [
-  { id:1, topic:'an-nhien',   text:'<b>An Nhiên Candles</b> quan tâm đến hoa hồng bạn vừa đăng.', time:'5 phút trước', read:false, starred:false },
-  { id:2, topic:null,         text:'AI đã tìm thấy <b>3 nhu cầu phù hợp</b> mới gần bạn.', time:'2 giờ trước', read:false, starred:false },
-  { id:3, topic:'leaf-style', text:'Bạn đã kết nối thành công với <b>Xưởng giấy Leaf &amp; Style</b>.', time:'Hôm qua', read:true, starred:false },
-  { id:4, topic:null,         text:'Cảm ơn bạn đã góp phần giảm <b>12kg</b> rác thải hoa tháng này 🌿', time:'3 ngày trước', read:true, starred:false }
-];
-let nextNotifId = 5;
-let followedTopics = new Set(); // các topic đã được đánh dấu sao
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  document.getElementById('view-welcome').classList.add('active');
 
-  function switchAuth(type){
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  document.querySelector('.nav-item[data-view="home"]').classList.add('active');
 
-    document.querySelectorAll(".auth-tabs button")
-        .forEach(btn=>btn.classList.remove("active"));
-
-    if(type==="login"){
-        document.getElementById("loginForm").style.display="block";
-        document.getElementById("registerForm").style.display="none";
-        document.querySelectorAll(".auth-tabs button")[0].classList.add("active");
-    }else{
-        document.getElementById("loginForm").style.display="none";
-        document.getElementById("registerForm").style.display="block";
-        document.querySelectorAll(".auth-tabs button")[1].classList.add("active");
-    }
+  document.querySelector('.screen').scrollTop = 0;
 }
 
-/* ================= MODAL CHI TIẾT ================= */
-
-function openModal(html){
-  document.getElementById('modal-body').innerHTML = html;
-  document.getElementById('modal-overlay').classList.add('show');
+function enterApp(){
+  document.querySelector('.app-header').style.display = 'flex';
+  document.querySelector('.bottom-nav').style.display = 'flex';
+  goTo('home');
 }
-function closeModal(){
-  document.getElementById('modal-overlay').classList.remove('show');
-}
-function closeModalOnOverlay(e){
-  if(e.target.id === 'modal-overlay') closeModal();
-}
-
-function openWhyModal(key){
-  const item = whyData[key];
-  if(!item) return;
-  openModal(`
-    <div class="modal-icon-lg">${item.icon}</div>
-    <div class="modal-title">${item.title}</div>
-    <div class="modal-meta">${item.meta}</div>
-    <div class="modal-desc">${item.full}</div>
-  `);
-}
-
-function openMatchModal(key){
-  const m = matchData[key];
-  if(!m) return;
-  openModal(`
-    <div class="modal-icon-lg">${m.icon}</div>
-    <div class="modal-title">${m.name}</div>
-    <div class="modal-meta">
-      📍 ${m.address}<br>
-      📞 ${m.phone}<br>
-      🌸 Cần: ${m.need} · Số lượng: ${m.qty} · Cách bạn: ${m.distance}
-    </div>
-    <span class="tag" style="margin-bottom:14px; display:inline-block;">${m.tag}</span>
-    <div class="modal-desc">${m.desc}</div>
-    <button class="btn btn-solid" onclick="connectMatch('${key}')">🤝 Liên hệ kết nối</button>
-  `);
-}
-
-function connectMatch(key){
-  const m = matchData[key];
-  closeModal();
-  showToast('Đã gửi yêu cầu kết nối tới ' + m.name);
-}
-
-/* ================= THÔNG BÁO ================= */
-
-function renderNotifications(){
-  const container = document.getElementById('notif-list');
-  if(notifications.length === 0){
-    container.innerHTML = `<div class="notif-empty">Không có thông báo nào.</div>`;
-  } else {
-    container.innerHTML = notifications.map(n => {
-      const related = (n.topic && followedTopics.has(n.topic));
-      return `
-      <div class="notif-item ${n.read ? 'read' : ''}">
-        <div class="notif-dot"></div>
-        <div class="notif-content" onclick="markAsRead(${n.id})">
-          <div class="notif-text">${n.text}</div>
-          <div class="notif-time">${n.time}</div>
-          ${related ? '<div class="notif-related">🔗 Liên quan đến mục bạn đã đánh dấu sao</div>' : ''}
-        </div>
-        <div class="notif-actions">
-          <div class="icon-btn ${n.starred ? 'starred' : ''}" onclick="toggleStar(${n.id})">${n.starred ? '★' : '☆'}</div>
-          <div class="icon-btn delete-btn" onclick="deleteNotif(${n.id})">✕</div>
-        </div>
-      </div>`;
-    }).join('');
-  }
-  updateNotifBadge();
-}
-
-function markAsRead(id){
-  const n = notifications.find(x => x.id === id);
-  if(n && !n.read){ n.read = true; renderNotifications(); }
-}
-
-function toggleStar(id){
-  const n = notifications.find(x => x.id === id);
-  if(!n) return;
-  n.starred = !n.starred;
-  if(n.topic){
-    if(n.starred) followedTopics.add(n.topic);
-    else {
-      // chỉ bỏ theo dõi nếu không còn thông báo nào khác của topic này được đánh dấu sao
-      const stillStarred = notifications.some(x => x.topic === n.topic && x.starred && x.id !== n.id);
-      if(!stillStarred) followedTopics.delete(n.topic);
-    }
-  }
-  renderNotifications();
-}
-
-function deleteNotif(id){
-  notifications = notifications.filter(x => x.id !== id);
-  renderNotifications();
-}
-
-function updateNotifBadge(){
-  const unread = notifications.filter(n => !n.read).length;
-  const badge = document.getElementById('notif-badge');
-  if(unread > 0){
-    badge.style.display = 'flex';
-    badge.textContent = unread;
-  } else {
-    badge.style.display = 'none';
-  }
-}
-
-// Nút thử nghiệm: mô phỏng một thông báo mới xuất hiện (vì demo chưa có backend thật)
-// Nếu topic được chọn trùng với topic người dùng đã đánh dấu sao, hệ thống sẽ tự gắn nhãn "liên quan"
-function addSimulatedNotification(){
-  const topics = Object.keys(matchData);
-  const topic = topics[Math.floor(Math.random() * topics.length)];
-  const businessName = matchData[topic].name;
-  const newNotif = {
-    id: nextNotifId++,
-    topic: topic,
-    text: `<b>${businessName}</b> vừa cập nhật nhu cầu hoa mới.`,
-    time: 'Vừa xong',
-    read: false,
-    starred: false
-  };
-  notifications.unshift(newNotif);
-  renderNotifications();
-  if(followedTopics.has(topic)){
-    showToast('🔗 Có thông báo mới liên quan đến mục bạn đã đánh dấu sao!');
-  } else {
-    showToast('Có thông báo mới');
-  }
-}
-
-/* ================= ĐĂNG NHẬP / ĐĂNG XUẤT ================= */
-
-let isLoggedIn = true;
-
-function renderAuthState(){
-  document.getElementById('profile-logged-in').style.display = isLoggedIn ? 'block' : 'none';
-  document.getElementById('profile-logged-out').style.display = isLoggedIn ? 'none' : 'block';
-  document.getElementById('profile-heading').textContent = isLoggedIn ? 'Hồ sơ của bạn' : 'Chào mừng trở lại';
-}
-
-function login(){
-  const email = document.getElementById('login-email').value.trim();
-  const password = document.getElementById('login-password').value.trim();
-  if(!email || !password){
-    showToast('Vui lòng nhập đầy đủ email và mật khẩu');
-    return;
-  }
-  // Lưu ý: đây là mô phỏng đăng nhập phía giao diện, chưa kết nối máy chủ xác thực thật.
-  isLoggedIn = true;
-  renderAuthState();
-  showToast('Đăng nhập thành công!');
-}
-
-function logout(){
-  isLoggedIn = false;
-  renderAuthState();
-  goTo('profile');
-  showToast('Đã đăng xuất');
-}
-
-/* ================= KHỞI TẠO ================= */
-renderNotifications();
-renderAuthState();
 
 function goTo(name){
   document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
@@ -873,6 +577,7 @@ function goTo(name){
   const navMatch = document.querySelector('.nav-item[data-view="'+name+'"]');
   if(navMatch) navMatch.classList.add('active');
   document.querySelector('.screen').scrollTop = 0;
+  if(name==='notif'){ document.getElementById('notif-badge').style.display='none'; }
 }
 
 function checkNewFlower(){
@@ -897,98 +602,16 @@ function addFlowerToSuggestions(name){
   }
 }
 
-function triggerUpload(){
-  document.getElementById('file-input').click();
-}
-
-function fileToBase64(file){
-  return new Promise((resolve, reject)=>{
-    const reader = new FileReader();
-    reader.onload = () => resolve(reader.result.split(',')[1]);
-    reader.onerror = reject;
-    reader.readAsDataURL(file);
-  });
-}
-
-async function handleFile(event){
-  const file = event.target.files[0];
-  if(!file) return;
-
-  // Hiện ảnh xem trước
-  const previewImg = document.getElementById('preview-img');
-  previewImg.src = URL.createObjectURL(file);
-  previewImg.style.display = 'block';
-  document.getElementById('upload-ic').style.display = 'none';
-  document.getElementById('upload-txt').textContent = 'Đang phân tích ảnh bằng AI...';
-  document.getElementById('upload-sub').textContent = 'Vui lòng chờ trong giây lát';
-
-  const aiBox = document.getElementById('ai-box');
-  const aiError = document.getElementById('ai-error');
-  aiBox.classList.add('show');
-  aiError.style.display = 'none';
-  document.getElementById('ai-title').textContent = 'Đang nhận diện...';
-  document.getElementById('ai-loaihoa').textContent = '...';
-  document.getElementById('ai-tinhtrang').textContent = '...';
-  document.getElementById('ai-mota').textContent = '...';
-
-  try{
-    const base64Data = await fileToBase64(file);
-    const mediaType = file.type || 'image/jpeg';
-
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-6',
-        max_tokens: 1000,
-        messages: [
-          {
-            role: 'user',
-            content: [
-              { type: 'image', source: { type: 'base64', media_type: mediaType, data: base64Data } },
-              { type: 'text', text: 'Bạn là chuyên gia nhận diện các loại hoa. Hãy nhìn kỹ bức ảnh này và xác định loại hoa xuất hiện trong ảnh. Chỉ trả lời DUY NHẤT một đối tượng JSON hợp lệ, không kèm markdown hay giải thích gì thêm, theo đúng cấu trúc sau: {"loai_hoa": "tên loại hoa bằng tiếng Việt, ví dụ Hoa hồng", "tinh_trang": "một trong ba giá trị: Còn tốt, Hơi héo, hoặc Héo nhiều", "mo_ta": "một câu ngắn mô tả bó hoa", "khong_phai_hoa": false}. Nếu ảnh không phải là hoa, đặt "khong_phai_hoa": true và để các trường còn lại là chuỗi rỗng.' }
-            ]
-          }
-        ]
-      })
-    });
-
-    const data = await response.json();
-    const rawText = (data.content || []).map(b => b.text || '').join('').trim();
-    const cleanText = rawText.replace(/```json/gi, '').replace(/```/g, '').trim();
-    const result = JSON.parse(cleanText);
-
-    if(result.khong_phai_hoa){
-      throw new Error('Ảnh này có vẻ không phải là hoa. Vui lòng chụp rõ bó hoa để AI nhận diện chính xác hơn.');
-    }
-
-    // Điền kết quả thật vào form
-    document.getElementById('f-loai').value = result.loai_hoa;
-    document.getElementById('f-tinhtrang').value = result.tinh_trang;
-    addFlowerToSuggestions(result.loai_hoa);
-    checkNewFlower();
-
-    document.getElementById('ai-title').textContent = 'Đã nhận diện xong';
-    document.getElementById('ai-loaihoa').textContent = result.loai_hoa;
-    document.getElementById('ai-tinhtrang').textContent = result.tinh_trang;
-    document.getElementById('ai-mota').textContent = result.mo_ta;
-
+function runAI(){
+  const box = document.getElementById('upload-box');
+  document.getElementById('upload-txt').textContent = 'Đang phân tích ảnh...';
+  document.getElementById('upload-sub').textContent = 'AI đang nhận diện loại hoa';
+  setTimeout(()=>{
     document.getElementById('upload-txt').textContent = 'Đã tải ảnh lên';
     document.getElementById('upload-sub').textContent = 'Chạm để đổi ảnh khác';
-
-  } catch(err){
-    console.error('Lỗi nhận diện AI:', err);
-    document.getElementById('ai-title').textContent = 'Không nhận diện được';
-    document.getElementById('ai-loaihoa').textContent = '—';
-    document.getElementById('ai-tinhtrang').textContent = '—';
-    document.getElementById('ai-mota').textContent = '—';
-    aiError.style.display = 'block';
-    aiError.textContent = err.message && err.message.includes('không phải là hoa')
-      ? err.message
-      : 'AI chưa nhận diện được ảnh này. Bạn có thể tự nhập loại hoa bên dưới.';
-    document.getElementById('upload-txt').textContent = 'Đã tải ảnh lên';
-    document.getElementById('upload-sub').textContent = 'Chạm để thử lại với ảnh khác';
-  }
+    document.getElementById('ai-box').classList.add('show');
+    document.getElementById('f-loai').value = 'Hoa hồng';
+  }, 900);
 }
 
 function submitPost(){
@@ -1013,6 +636,11 @@ function tick(){
   const m = d.getMinutes().toString().padStart(2,'0');
   document.getElementById('clock').textContent = h+':'+m;
 }
+
+// Chỉ hiện màn hình chào mừng khi vừa mở app
+document.querySelector('.app-header').style.display = 'none';
+document.querySelector('.bottom-nav').style.display = 'none';
+
 tick(); setInterval(tick, 30000);
 </script>
 
